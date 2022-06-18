@@ -19,7 +19,7 @@ class Test02:
         # Instanciar classe UpdateProfilePage
         self.update_page = UpdateProfilePage(self.login_page.driver)
 
-        # Acessar e verifica a tela de atualizar informações
+        # Acessar e verificar a tela de atualizar informações
         assert self.update_page.open_update_profile_page()
 
         # Verificar os campos estão disponiveis para atualização
