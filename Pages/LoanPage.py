@@ -15,11 +15,13 @@ class LoanPage(General):
     applyNowButtonCssSelector = "input[value='Apply Now']"
     loanStatusID = 'loanStatus'
     messageSuccessCssSelector = '.ng-scope p'
+    messageErroClass = 'error'
 
     requestLoanMenuOption = 'Request Loan'
     titleText = 'Apply for a Loan'
 
     successLoanMessage = 'Congratulations, your loan has been approved.'
+    failLoanMenssage = 'An internal error has occurred and has been logged.'
 
 
 
@@ -50,6 +52,11 @@ class LoanPage(General):
         # Clicar no botão ApplyNow
         self.driver.find_element(By.CSS_SELECTOR, self.applyNowButtonCssSelector).click()
 
+    def click_apply_now_button(self):
+        time.sleep(1)
+        # Clicar no botão ApplyNow
+        self.driver.find_element(By.CSS_SELECTOR, self.applyNowButtonCssSelector).click()
+
     def verify_loan_status_approved(self):
         # Verificar o status (Approved)
         return self.driver.find_element(By.ID, self.loanStatusID).text == 'Approved'
@@ -58,6 +65,14 @@ class LoanPage(General):
         # Verificar mensagem de sucesso
         return  self.driver.find_element(By.CSS_SELECTOR, self.messageSuccessCssSelector).text == self.successLoanMessage
 
+    def verify_fields_empty(self):
+        # Vericar o campo Loan Amount está vazio
+        is_loan_amount = self.driver.find_element(By.ID, self.loanAmountID).text == ''
 
+        # Vericar o campo Down Payment está vazio
+        is_downPayment = self.driver.find_element(By.ID, self.downPaymentID).text == ''
 
+        return is_loan_amount and is_downPayment
 
+    def verify_erro_message(self):
+        return self.driver.find_element(By.CLASS_NAME, self.messageErroClass).text == self.failLoanMenssage
