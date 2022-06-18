@@ -1,3 +1,5 @@
+import time
+
 import pytest
 
 from Pages.LoanPage import LoanPage
@@ -23,13 +25,13 @@ class Test04:
         # Acessar e verificar a tela de loan request
         assert self.loan_page.open_request_loan_page(), 'A página Loan não foi aberta'
 
-        #Verique se os campos esta vazios
+        # Verificar se os campos estão vazios
         assert self.loan_page.verify_fields_empty(), 'Os campos estão preenchidos'
 
-        #Clicando no botão
-        self.loan_page.click_apply_now_button
+        # Clicando no botão Apply Now
+        self.loan_page.click_apply_now_button()
 
-        #Verificar a mensagem de erro está correta
+        # Verificar a mensagem de erro está correta
         assert self.loan_page.verify_erro_message(), 'A mensagem de erro está incorreta'
 
     # Test TearDown (Closes driver)

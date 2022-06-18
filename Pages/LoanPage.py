@@ -53,7 +53,9 @@ class LoanPage(General):
         self.driver.find_element(By.CSS_SELECTOR, self.applyNowButtonCssSelector).click()
 
     def click_apply_now_button(self):
-        time.sleep(1)
+        # Procurar o botão apply now
+        self.driver.find_element(By.CSS_SELECTOR, self.applyNowButtonCssSelector)
+
         # Clicar no botão ApplyNow
         self.driver.find_element(By.CSS_SELECTOR, self.applyNowButtonCssSelector).click()
 
