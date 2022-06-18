@@ -12,9 +12,7 @@ class OpenAccountPage(General):
     openAccountButtonCssSelector = "input[value='Open New Account']"
     messageSuccessCssSelector = '.ng-scope p'
     newAccountIdTextID = 'newAccountId'
-
     openAccountText = 'Open New Account'
-
 
     # Strings to use at tests
     user = 'cesarSchool123'
@@ -26,7 +24,6 @@ class OpenAccountPage(General):
     def open_new_account_page(self):
         self.driver.find_element(By.LINK_TEXT, self.openAccountText).click()
         return self.driver.find_element(By.CSS_SELECTOR, self.openAccountTitleCssSelector).text == self.openAccountText
-
 
     def create_new_account(self):
         # Clicar no botão de criar nova conta

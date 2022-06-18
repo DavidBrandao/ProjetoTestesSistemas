@@ -1,7 +1,5 @@
 import time
-
 from selenium.webdriver.common.by import By
-
 from Pages.General import General
 
 
@@ -69,4 +67,3 @@ class BillPage(General):
         return (self.driver.find_element(By.ID, self.payeeNameID).is_displayed() and
                 self.driver.find_element(By.ID, self.amountID).is_displayed() and
                 self.driver.find_element(By.ID, self.fromAccountID).is_displayed())
-

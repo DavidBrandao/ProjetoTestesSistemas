@@ -23,8 +23,6 @@ class LoanPage(General):
     successLoanMessage = 'Congratulations, your loan has been approved.'
     failLoanMenssage = 'An internal error has occurred and has been logged.'
 
-
-
     def __init__(self, driver):
         super(LoanPage, self).__init__(driver=driver)
 
@@ -65,7 +63,7 @@ class LoanPage(General):
 
     def verify_loan_status_message(self):
         # Verificar mensagem de sucesso
-        return  self.driver.find_element(By.CSS_SELECTOR, self.messageSuccessCssSelector).text == self.successLoanMessage
+        return self.driver.find_element(By.CSS_SELECTOR, self.messageSuccessCssSelector).text == self.successLoanMessage
 
     def verify_fields_empty(self):
         # Vericar o campo Loan Amount está vazio

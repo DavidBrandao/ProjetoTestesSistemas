@@ -1,12 +1,11 @@
 import time
-
 import pytest
-
 from Pages.LoginPage import LoginPage
 from Pages.TransferPage import TransferPage
 
 
 class Test06:
+
     # Test setup (Opens login page)
     @pytest.fixture()
     def setup(self, browser):
@@ -32,8 +31,6 @@ class Test06:
 
         # Verificar se dados da transferencia são mostrados na tela
         assert self.transfer.verify_transfer_data_visible()
-
-
 
     # Test TearDown (Closes driver)
     @pytest.fixture()

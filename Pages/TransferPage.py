@@ -1,7 +1,5 @@
 import time
-
 from selenium.webdriver.common.by import By
-
 from Pages.General import General
 
 
@@ -49,7 +47,3 @@ class TransferPage(General):
         return (self.driver.find_element(By.ID, self.amountID).is_displayed() and
                 self.driver.find_element(By.ID, self.fromAccountID).is_displayed() and
                 self.driver.find_element(By.ID, self.toAccountID).is_displayed())
-
-
-
-

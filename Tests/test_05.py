@@ -1,12 +1,11 @@
 import time
-
 import pytest
-
 from Pages.BillPayPage import BillPage
 from Pages.LoginPage import LoginPage
 
 
 class Test05:
+
     # Test setup (Opens login page)
     @pytest.fixture()
     def setup(self, browser):
@@ -29,7 +28,6 @@ class Test05:
 
         # Verificar que o pagamento foi realizado com sucesso
         assert self.bill_page.verify_bill_was_paid()
-
 
     # Test TearDown (Closes driver)
     @pytest.fixture()

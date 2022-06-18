@@ -1,7 +1,5 @@
 import time
-
 import pytest
-
 from Pages.LoanPage import LoanPage
 from Pages.LoginPage import LoginPage
 
@@ -39,5 +37,3 @@ class Test04:
     def tear_down(self):
         yield
         self.login_page.QuitDriver()
-
-

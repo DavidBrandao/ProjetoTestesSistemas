@@ -1,5 +1,4 @@
 import pytest
-
 from Pages.LoanPage import LoanPage
 from Pages.LoginPage import LoginPage
 

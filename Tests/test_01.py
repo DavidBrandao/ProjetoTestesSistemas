@@ -1,5 +1,4 @@
 import time
-
 import pytest
 from Pages.General import General
 from Pages.LoginPage import LoginPage
@@ -15,7 +14,6 @@ class Test01:
         # Open Login Page
         self.login_page.open_login_page()
 
-
     def test_criar_nova_conta(self, setup, tear_down):
         # Logando na aplicação
         self.login_page.login()
@@ -29,7 +27,6 @@ class Test01:
 
         # Validando que o numero da conta é um inteiro
         assert type(self.numero_conta) is int
-
 
     # Test TearDown (Closes driver)
     @pytest.fixture()
