@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 
 from Pages.General import General
@@ -8,6 +10,8 @@ class OpenAccountPage(General):
     # ID and ClassName List
     openAccountTitleCssSelector = 'div h1.title'
     openAccountButtonCssSelector = "input[value='Open New Account']"
+    messageSuccessCssSelector = '.ng-scope p'
+    newAccountIdTextID = 'newAccountId'
 
     openAccountText = 'Open New Account'
 
@@ -25,4 +29,16 @@ class OpenAccountPage(General):
 
 
     def create_new_account(self):
-        print (self.driver.find_element(By.CSS_SELECTOR, self.openAccountButtonCssSelector))
+        # Clicar no botão de criar nova conta
+        time.sleep(2)
+        self.driver.find_element(By.CSS_SELECTOR, self.openAccountButtonCssSelector).click()
+
+        # (Aguardar entrar na tela de conta criada) trocar sleep por wait no elemento openAccountTitleCssSelector
+        time.sleep(2)
+
+        # Validar a mensagem de sucesso para a criação de conta
+        textSuccess = self.driver.find_element(By.CSS_SELECTOR, self.messageSuccessCssSelector).text
+        assert textSuccess == 'Congratulations, your account is now open.'
+
+        # Validar o ID da nova conta criada
+        return int(self.driver.find_element(By.ID, self.newAccountIdTextID).text)
