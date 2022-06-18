@@ -16,7 +16,7 @@ class TestLogin:
         self.login_page.open_login_page()
 
 
-    def test_login_banco(self, setup, tear_down):
+    def test_criar_nova_conta(self, setup, tear_down):
         # Logando na aplicação
         self.login_page.login()
 
@@ -24,10 +24,11 @@ class TestLogin:
         self.open_account_page = OpenAccountPage(self.login_page.driver)
         assert self.open_account_page.open_new_account_page(), 'O site não se encontra na criação de conta !'
 
-        #Clicando no botão criar conta
-        self.open_account_page.create_new_account()
+        # Clicando nova conta e retornando seu numero
+        self.numero_conta = self.open_account_page.create_new_account()
 
-        time.sleep(5)
+        # Validando que o numero da conta é um inteiro
+        assert type(self.numero_conta) is int
 
 
     # Test TearDown (Closes driver)
