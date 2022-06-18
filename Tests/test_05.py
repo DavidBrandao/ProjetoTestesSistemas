@@ -6,7 +6,7 @@ from Pages.BillPayPage import BillPage
 from Pages.LoginPage import LoginPage
 
 
-class Test04:
+class Test05:
     # Test setup (Opens login page)
     @pytest.fixture()
     def setup(self, browser):

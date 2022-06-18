@@ -7,13 +7,13 @@ from Pages.General import General
 
 class BillPage(General):
 
-    #Url da página
+    # Url da página
     url = 'https://parabank.parasoft.com/parabank/billpay.htm'
 
-    #Lateral menu
+    # Lateral menu
     billPayMenuOption = 'Bill Pay'
 
-    #Page title
+    # Page title
     titleCssSelector = 'div h1.title'
 
     # Form items ID

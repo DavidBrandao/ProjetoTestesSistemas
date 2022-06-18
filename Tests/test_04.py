@@ -18,7 +18,7 @@ class Test04:
         # Logando na aplicação
         self.login_page.login()
 
-    def teste_tentaiva_relizar_emprestimo_sem_valores(self, setup, tear_down):
+    def teste_tentativa_relizar_emprestimo_sem_valores(self, setup, tear_down):
         # Instanciar a classe LoanPage
         self.loan_page = LoanPage(self.login_page.driver)
 
