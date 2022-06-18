@@ -8,15 +8,15 @@ from Pages.General import General
 
 class LoginPage(General):
     #Website URL
-    url = 'http://automationpractice.com/index.php?controller=authentication&back=my-account'
+    url = 'https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC'
 
     #ID and ClassName List
-    userEmailTextBoxID = 'email'
-    passwordTextBoxID = 'passwd'
-    signInButtonID = 'SubmitLogin'
+    usernameTextBoxNAME = 'username'
+    passwordTextBoxName = 'password'
+    signInButtonXPATH = '//*[@id="loginPanel"]/form/div[3]/input'
 
     #Strings to use at tests
-    user = 'dfb@cesar.school.com'
+    user = 'cesarSchool123'
     password = '123456'
 
     def __init__(self, browser):
@@ -27,13 +27,13 @@ class LoginPage(General):
         self.driver.implicitly_wait(10)
 
     def login(self):
-        self.driver.find_element(By.ID, self.userEmailTextBoxID).send_keys(self.user)
-        self.driver.find_element(By.ID, self.passwordTextBoxID).send_keys(self.password)
+        self.driver.find_element(By.NAME, self.usernameTextBoxNAME).send_keys(self.user)
+        self.driver.find_element(By.NAME, self.passwordTextBoxName).send_keys(self.password)
         self.click_login_button()
 
     def click_login_button(self):
-        login_btn = self.driver.find_element(By.ID, self.signInButtonID)
+        login_btn = self.driver.find_element(By.XPATH, self.signInButtonXPATH)
         login_btn.click()
 
     def is_login_button_visible(self):
-        return self.driver.find_element(By.ID, self.loginButtonID).is_displayed()
+        return self.driver.find_element(By.ID, self.signInButtonXPATH).is_displayed()
