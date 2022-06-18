@@ -16,7 +16,7 @@ class LoginPage(General):
     signInButtonXPATH = '//*[@id="loginPanel"]/form/div[3]/input'
 
     #Strings to use at tests
-    user = 'cesarSchool123'
+    user = 'cesarSchool'
     password = '123456'
 
     def __init__(self, browser):

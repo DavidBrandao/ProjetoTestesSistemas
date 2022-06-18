@@ -30,11 +30,11 @@ class OpenAccountPage(General):
 
     def create_new_account(self):
         # Clicar no botão de criar nova conta
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.CSS_SELECTOR, self.openAccountButtonCssSelector).click()
 
         # (Aguardar entrar na tela de conta criada) trocar sleep por wait no elemento openAccountTitleCssSelector
-        time.sleep(2)
+        time.sleep(1)
 
         # Validar a mensagem de sucesso para a criação de conta
         textSuccess = self.driver.find_element(By.CSS_SELECTOR, self.messageSuccessCssSelector).text

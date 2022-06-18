@@ -5,7 +5,7 @@ from Pages.General import General
 from Pages.LoginPage import LoginPage
 from Pages.OpenAccountPage import OpenAccountPage
 
-class TestLogin:
+class Test01:
 
     # Test setup (Opens login page)
     @pytest.fixture()
