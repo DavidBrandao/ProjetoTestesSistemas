@@ -45,7 +45,7 @@ class LoanPage(General):
         self.driver.find_element(By.ID, self.loanAmountID).send_keys(100)
 
         # Preencher o campo Down Payment
-        self.driver.find_element(By.ID, self.downPaymentID).send_keys(50)
+        self.driver.find_element(By.ID, self.downPaymentID).send_keys(1)
 
         # Clicar no botão ApplyNow
         self.driver.find_element(By.CSS_SELECTOR, self.applyNowButtonCssSelector).click()
